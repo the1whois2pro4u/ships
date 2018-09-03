@@ -3,7 +3,7 @@ import XLSX from 'xlsx'
 
 import path from 'path'
 
-const channelId = '345179574033842177'
+const channelId = '418088194584739850'
 
 export default class Bot {
   constructor (botToken) {
@@ -109,12 +109,12 @@ export default class Bot {
 
   async sendMessage () {
     let embed = new Discord.RichEmbed().setColor(0x00AE86)
-    let desc = '**Time until next payout**:'
+    let desc = 'Flags are friendly, poop is enemy. Sleeping face is currently inactive \n\n**Time until next payout**:'
     for (let i in this.mates) {
       let fieldName = String(this.mates[i].time)
       let fieldText = ''
       for (const mate of this.mates[i].mates) {
-        fieldText += `${mate.flag} [${mate.name}](${mate.swgoh})\n` // Discord automatically trims messages
+        fieldText += `${mate.flag} [${mate.name}]\n` // Discord automatically trims messages
       }
       embed.addField(fieldName, fieldText, true)
     }
