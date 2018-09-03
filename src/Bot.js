@@ -3,7 +3,7 @@ import XLSX from 'xlsx'
 
 import path from 'path'
 
-const channelId = '400967140016128001'
+const channelId = '418088194584739850'
 
 export default class Bot {
   constructor (botToken) {
