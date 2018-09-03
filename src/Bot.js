@@ -3,7 +3,7 @@ import XLSX from 'xlsx'
 
 import path from 'path'
 
-const channelId = '418088194584739850'
+const channelId = '400967140016128001'
 
 export default class Bot {
   constructor (botToken) {
@@ -114,7 +114,7 @@ export default class Bot {
       let fieldName = String(this.mates[i].time)
       let fieldText = ''
       for (const mate of this.mates[i].mates) {
-        fieldText += `${mate.flag} [${mate.name}]\n` // Discord automatically trims messages
+        fieldText += `${mate.flag} ${mate.name}\n` // Discord automatically trims messages
       }
       embed.addField(fieldName, fieldText, true)
     }
@@ -122,3 +122,15 @@ export default class Bot {
     await this.message.edit({embed})
   }
 }
+
+const http = require('http');
+const express = require('express');
+const app = express();
+app.get("/", (request, response) => {
+  console.log(Date.now() + " Ping Received");
+  response.sendStatus(200);
+});
+app.listen(process.env.PORT);
+setInterval(() => {
+  http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);
+}, 280000);
