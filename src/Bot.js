@@ -13,7 +13,7 @@ export default class Bot {
 
     this.client = new Discord.Client()
     this.client.on("ready", async () => {
-      this.client.user.setGame('live countdowns until payout')
+      this.client.user.setGame('puppy juicer is a dingo')
       this.channel = this.client.channels.get(channelId)
 
       await this.initializeBot()
