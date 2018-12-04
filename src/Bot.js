@@ -13,7 +13,7 @@ export default class Bot {
 
     this.client = new Discord.Client()
     this.client.on("ready", async () => {
-      this.client.user.setGame('puppy juicer is a dingo')
+      this.client.user.setGame('Sabacc against Lando')
       this.channel = this.client.channels.get(channelId)
 
       await this.initializeBot()
@@ -109,7 +109,7 @@ export default class Bot {
 
   async sendMessage () {
     let embed = new Discord.RichEmbed().setColor(0x00AE86)
-    let desc = 'Flags are friendly, poop is enemy. Sleeping face is currently inactive \n\n**Time until next payout**:'
+    let desc = 'country flags are friendly \n\n:flag_white: is friendly, but not in the chat \n:poop: is enemy \n:sleeping: is currently inactive \n\n**Time until next payout**:'
     for (let i in this.mates) {
       let fieldName = String(this.mates[i].time)
       let fieldText = ''
