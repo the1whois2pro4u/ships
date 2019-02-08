@@ -13,7 +13,7 @@ export default class Bot {
 
     this.client = new Discord.Client()
     this.client.on("ready", async () => {
-      this.client.user.setGame('Sabacc against Lando')
+      this.client.user.setGame('serving 2pro')
       this.channel = this.client.channels.get(channelId)
 
       await this.initializeBot()
