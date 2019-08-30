@@ -134,3 +134,27 @@ app.listen(process.env.PORT);
 setInterval(() => {
   http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);
 }, 280000);
+
+
+
+// test
+
+
+const client = new Discord.Client()
+
+client.on('message', (receivedMessage) => {
+    // Prevent bot from responding to its own messages
+    if (receivedMessage.author == client.user) {
+        return
+    }
+    
+    // Check if the bot's user was tagged in the message
+    if (receivedMessage.content.includes("2pro4u")) {
+        // Send acknowledgement message
+        receivedMessage.channel.send("Thank you for calling my master. He will respond as soon™ as possible.")
+    }
+})
+
+client.login("XXXXXXXXXXXXXXXXXXXXX") // Replace XXXXX with your bot token
+
+// test
