@@ -13,7 +13,9 @@ export default class Bot {
 
     this.client = new Discord.Client()
     this.client.on("ready", async () => {
-      this.client.user.setGame('Hello there!')
+
+    this.client.user.setGame('Hello there!')
+
       this.channel = this.client.channels.get(channelId)
 
       await this.initializeBot()
@@ -135,7 +137,6 @@ setInterval(() => {
   http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);
 }, 280000);
 
-
 // test
 
 
@@ -150,10 +151,17 @@ client.on('message', (receivedMessage) => {
     // Check if the bot's user was tagged in the message
     if (receivedMessage.content.includes("2pro4u")) {
         // Send acknowledgement message
+
         receivedMessage.channel.send("Thank you for calling my master. He is not available right now, but he may answer soon™.")
     }
 })
 
 client.login("NDg2MTEyOTYxNjM1NTQ5MTk0.XWkUrw.3mWrgxLQ6x0okyT4ZP7RtDIh42k") // Replace XXXXX with your bot token
+        receivedMessage.channel.send("Thank you for calling my master. He will respond as soon™ as possible.")
+    }
+})
+
+client.login("XXXXXXXXXXXXXXXXXXXXX") // Replace XXXXX with your bot token
+
 
 // test
